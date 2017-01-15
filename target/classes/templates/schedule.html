@@ -6,5 +6,59 @@
 </head>
 <body>
 <p th:text="'Schedule goes here'" />
+<p><button onclick="time()">Schedule Appointment</button>
+</p>
+
+<script src="../timekit-sdk.js"></script>
+<script>
+var start;
+var end;
+timekit.auth({
+  email: 'sabrina.fiester@gmail.com',
+  password: 'hello'
+}).then(function(response) {
+  console.log('user authenticated!');
+  console.log(response);
+}).catch(function(response) {
+  console.log('an error occured!');
+  console.log(response);
+});
+
+function time() {
+    timekit.findTime({
+      emails: ['sabrina.fiester@gmail.com', 'marty.mcfly@timekit.io'],
+      future: '2 days',
+      duration: '30 minutes'
+    }).then(function(response) {
+      console.log('find time OK, heres the result:');
+      start = response.data[1].start;
+      end = response.data[1].end;
+      scheduleIt(start, end);
+      console.log(response.data[1].start, response.data[1].end);
+    });
+};
+
+function scheduleIt(start, end) {
+    timekit.createEvent({
+  start:        start,
+  end:          end,
+  what:         'Dental Cleaning',
+  where:        'Dr. Marty',
+  participants: ['sabrina.fiester@gmail.com', 'marty.mcfly@timekit.io'],
+  invite:       true,
+  calendar_id:  '14387bdf-139a-435d-acba-185ca4bf6135'
+}).then(function(response){
+  console.log(response);
+}).catch(function(response){
+  console.log(response);
+});
+
+var thedate = new Date(Date.parse(start));
+alert('Appointment scheduled on: ' + thedate);
+}
+
+</script>
 </body>
 </html>
+
+
