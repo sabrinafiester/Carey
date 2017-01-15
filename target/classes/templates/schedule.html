@@ -48,6 +48,7 @@ timekit.auth({
   console.log(response);
 });
 
+
 function time() {
     timekit.findTime({
       emails: ['sabrina.fiester@gmail.com', 'marty.mcfly@timekit.io'],
@@ -68,14 +69,49 @@ function time() {
 };
 
 function scheduleIt(start, end) {
+
+timekit.auth({
+  email: 'sabrina.fiester@gmail.com',
+  password: 'hello'
+}).then(function(response) {
+  console.log('user authenticated!');
+  console.log(response);
+}).catch(function(response) {
+  console.log('an error occured!');
+  console.log(response);
+});
+
+
+<!--timekit.makeRequest({-->
+  <!--url: '/events',-->
+  <!--method: 'post',-->
+  <!--data: {-->
+    <!--start:        start,-->
+  <!--end:          end,-->
+  <!--what:         'Dental Cleaning',-->
+  <!--where:        'Dr. Marty',-->
+  <!--participants: ['sabrina.fiester@gmail.com', 'marty.mcfly@timekit.io'],-->
+  <!--invite:       true,-->
+  <!--calendar_id:  '14387bdf-139a-435d-acba-185ca4bf6135'-->
+  <!--},-->
+  <!--timeout: 1000-->
+<!--}).then(function(response){-->
+  <!--console.log(response);-->
+<!--}).catch(function(response){-->
+  <!--console.log(response);-->
+<!--});-->
+
+
+
+
     timekit.createEvent({
   start:        start,
   end:          end,
   what:         'Dental Cleaning',
   where:        'Dr. Marty',
-  participants: ['sabrina.fiester@gmail.com', 'marty.mcfly@timekit.io'],
+  participants: ['sabrina.fiester@gmail.com', 'hi@sabrina.io'],
   invite:       true,
-  calendar_id:  '14387bdf-139a-435d-acba-185ca4bf6135'
+  calendar_id:  '9bbc988f-6395-4093-ba61-17daa49191dc'
 }).then(function(response){
   console.log(response);
 }).catch(function(response){
