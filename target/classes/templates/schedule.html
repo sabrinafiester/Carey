@@ -59,15 +59,33 @@
 <!-- Scheduling Section -->
 <section id="scheduling">
     <div class="container">
-        <div class="row margin-top-60">
+        <div class="row margin-top-30">
             <div class="col-lg-12 text-center">
                 <img class="img-responsive img-centered" src="images/profile.png" alt="" />
                 <div class="intro-text">
                     <p th:text="'It\'s been a while since you\'ve seen a dentist'" />
                     <p><button onclick="time()">Schedule Appointment</button>
                     </p>
+                    <!--<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=sabrina.fiester%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0"  ></iframe>-->
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="success" id="calendars">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <div class="intro-text">
+                    <iframe src="https://calendar.google.com/calendar/embed?mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=sabrina.fiester%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FChicago" style="border: 0" width="500" height="600" frameborder="0"  ></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="intro-text">
+                    <iframe src="https://calendar.google.com/calendar/embed?mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=sabrina.fiester%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FChicago" style="border-width:0" width="500" height="600" frameborder="0" scrolling="no"></iframe>                </div>
+            </div>
+
         </div>
     </div>
 </section>
