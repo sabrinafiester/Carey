@@ -14,9 +14,23 @@ public class GreetingController {
         return "greeting";
     }
 
+    @RequestMapping("/home")
+    public String index() {
+        return "index";
+    }
+
     @RequestMapping("/schedule")
-    public String greeting() {
+    public String schedule() {
         return "schedule";
     }
 
+    @RequestMapping("/wellnessstory")
+    public String wellnessstory() {
+        return "wellnessstory";
+    }
+
+    @RequestMapping("/lifelogistics")
+    public String lifelogistics() {
+        return "lifelogistics";
+    }
 }
