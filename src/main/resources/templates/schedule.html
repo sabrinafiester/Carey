@@ -28,7 +28,12 @@ function time() {
     timekit.findTime({
       emails: ['sabrina.fiester@gmail.com', 'marty.mcfly@timekit.io'],
       future: '2 days',
-      duration: '30 minutes'
+      duration: '30 minutes',
+      filters: {
+             and: [
+               { business_hours: {timezone: 'America/Los_angeles'} }
+             ]
+           }
     }).then(function(response) {
       console.log('find time OK, heres the result:');
       start = response.data[1].start;
