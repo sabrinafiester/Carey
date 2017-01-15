@@ -293,6 +293,9 @@ section.success {
 form .row:first-child .floating-label-form-group {
     border-top: 1px solid #eeeeee;
 }
+.provider-row {
+    color: #2C3E50;
+}
 footer {
     color: white;
 }
