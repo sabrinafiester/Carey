@@ -13,6 +13,13 @@ p {
 p.small {
     font-size: 16px;
 }
+p.italic-text{
+    font-style: italic;
+}
+p.no-padding{
+    padding:0 0;
+    margin: 0 0;
+}
 a,
 a:hover,
 a:focus,
@@ -83,7 +90,7 @@ header .intro-text .skills {
 .navbar-custom {
     background: #090628;
     font-family: "Verdana";
-    font-weight: 600;
+    font-weight: 500;
     border: none;
 }
 .navbar-custom a:focus {
@@ -136,7 +143,7 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
     .navbar-custom {
-        padding: 20px 0;
+        padding: 5px 0;
         -webkit-transition: padding 0.3s;
         -moz-transition: padding 0.3s;
         transition: padding 0.3s;
@@ -181,6 +188,9 @@ section.success {
 }
 .margin-top-60 {
     margin-top: 50px;
+}
+.margin-top-40 {
+    margin-top: 25px;
 }
 .margin-bottom-60 {
     margin-bottom: 50px;
