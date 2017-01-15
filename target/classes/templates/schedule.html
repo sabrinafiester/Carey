@@ -31,7 +31,7 @@ function time() {
       duration: '30 minutes',
       filters: {
              and: [
-               { business_hours: {timezone: 'America/Los_angeles'} }
+               { business_hours: {timezone: 'America/Chicago'} }
              ]
            }
     }).then(function(response) {
@@ -59,7 +59,7 @@ function scheduleIt(start, end) {
 });
 
 var thedate = new Date(Date.parse(start));
-alert('Appointment scheduled on: ' + thedate);
+alert('Appointment scheduled: \n' + thedate.toLocaleString());
 }
 
 </script>
